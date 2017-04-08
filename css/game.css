@@ -1,0 +1,99 @@
+img{
+	display: none;
+}
+canvas{
+	position: absolute;
+	left: 50%;
+	margin-left: -600px;
+}
+.panel{
+	position: absolute;
+	width: 1200px;
+    left: 50%;
+	margin-left: -600px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.panel p{
+    font-size: 30px;
+    line-height: 40px;
+    padding-left: 40px;
+    margin: 0;
+    color: #424242;
+    background: url(../img/score.png) no-repeat;
+    background-size: 30px 30px;
+    background-position-y: 4px;
+}
+.panel a{
+	position: absolute;
+	top: 20px;
+	right: 60px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-left: 20px solid #424242;
+	border-bottom: 10px solid transparent;
+	margin-top: 10px;
+	font-size: 0;
+}
+.panel .start{
+	border:none;
+	width: 25px;
+    height: 30px;
+}
+.start::before, .start::after{
+	content: "";
+	position: absolute;
+	display: block;
+	width: 6px;
+	height: 20px;
+	top: 0px;
+	right: 5px;
+	background-color: #424242;
+}
+.start::after{
+    right: 15px;
+}
+.continue{
+	display: none;
+	position: absolute;
+	width: 380px;
+	top: 200px;
+	left: 50%;
+	background-color: #26A69A;
+	margin-left: -150px;
+	padding: 45px 10px;
+	box-shadow: 2px 2px 20px grey;
+	border-radius: 20px;
+	box-sizing: border-box;
+}
+.continue p{
+	font-size: 22px;
+	color: #fff;
+	text-align: center;
+    font-weight: bold;
+    margin: 0 0 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px grey;
+}
+.continue a{
+	display: block;
+	width: 80px;
+	margin: 0 auto;
+	padding: 10px 0;
+	background-color: #66BB6A;
+	border-radius: 8px;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	box-shadow: 2px 2px 5px grey;
+	transition: all .3s;
+}
+.continue a:hover{
+	background-color: #03A9F4;
+	transform: scale(1.05);
+}
