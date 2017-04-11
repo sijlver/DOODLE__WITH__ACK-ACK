@@ -14,7 +14,7 @@ function init(bgImg, playerImg, lineImg, tankImg, fireImg) {
     const button = document.getElementById('start');
     const continueBlock = document.querySelector('.continue');
     const continueButton = document.getElementById('continueButton');
-    const player = new Player(ctx, playerImg, score);
+    const player = new Player(ctx, playerImg, score, button, getComputedStyle(continueBlock));
     const fire = new Fire(ctx, fireImg);
     const tank = new Tank(ctx, tankImg, fire);
     let lines = arr.map(obj => new Lines(ctx, lineImg, obj.x, obj.y));

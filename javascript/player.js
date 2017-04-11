@@ -1,5 +1,5 @@
 class Player{
-    constructor(ctx, playerImg, score){
+    constructor(ctx, playerImg, score, button, continueBlock){
         this.ctx = ctx;
         this.y = 580;
         this.x = 750;
@@ -15,7 +15,7 @@ class Player{
         this.img = playerImg;
         this.score = score;
         document.addEventListener('keydown', e => {
-            if(e.keyCode === 38){
+            if(e.keyCode === 38&&button.classList.contains('start')&&continueBlock.display === 'none'){
                 this.acceleration = 150;
                 this.score.innerHTML = Number(this.score.innerHTML) - 100;
             }else if(e.keyCode === 39){

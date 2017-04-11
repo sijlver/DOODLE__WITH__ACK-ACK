@@ -194,7 +194,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Player = function () {
-    function Player(ctx, playerImg, score) {
+    function Player(ctx, playerImg, score, button, continueBlock) {
         var _this = this;
 
         _classCallCheck(this, Player);
@@ -214,7 +214,7 @@ var Player = function () {
         this.img = playerImg;
         this.score = score;
         document.addEventListener('keydown', function (e) {
-            if (e.keyCode === 38) {
+            if (e.keyCode === 38 && button.classList.contains('start') && continueBlock.display === 'none') {
                 _this.acceleration = 150;
                 _this.score.innerHTML = Number(_this.score.innerHTML) - 100;
             } else if (e.keyCode === 39) {
@@ -425,7 +425,7 @@ function init(bgImg, playerImg, lineImg, tankImg, fireImg) {
     var button = document.getElementById('start');
     var continueBlock = document.querySelector('.continue');
     var continueButton = document.getElementById('continueButton');
-    var player = new __WEBPACK_IMPORTED_MODULE_1__player__["a" /* Player */](ctx, playerImg, score);
+    var player = new __WEBPACK_IMPORTED_MODULE_1__player__["a" /* Player */](ctx, playerImg, score, button, getComputedStyle(continueBlock));
     var fire = new __WEBPACK_IMPORTED_MODULE_3__fire__["a" /* Fire */](ctx, fireImg);
     var tank = new __WEBPACK_IMPORTED_MODULE_4__tank__["a" /* Tank */](ctx, tankImg, fire);
     var lines = arr.map(function (obj) {
