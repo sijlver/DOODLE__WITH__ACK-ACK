@@ -64,6 +64,7 @@ function init(bgImg, playerImg, lineImg, tankImg, fireImg) {
                 score.innerHTML = Number(score.innerHTML) + 10;
                 lines.push(randomLine(lines));
                 lines.push(randomLine(lines));
+                lines[i].render();
                 break;
             }
             if(player.diff > 0){
@@ -79,6 +80,7 @@ function init(bgImg, playerImg, lineImg, tankImg, fireImg) {
     function gameLoop() {
         ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
         updateLines(player);
+        lines.forEach(name => name.render());
         player.update(lines, fire);
         player.render();
         loseFun(player);
